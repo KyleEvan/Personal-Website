@@ -45,7 +45,7 @@
         // Initialize website, pause opening animation while assets preload
         function init() {
           body.classList.add('js-loading');
-          window.addEventListener( 'scroll', noscroll );
+          // window.addEventListener( 'scroll', noscroll );
           window.addEventListener("load", removeLoadingClass);
         }
         // Once the window has fully loaded, remove loading class to init transitions
@@ -109,7 +109,7 @@
     
       
             <div id="content">
-              <div id="pic-of-me-border" data-parallax="true" data-speed="0.7" data-direction="up">
+              <div id="pic-of-me-border">
                 <div id="pic-of-me"></div>
               </div>
               <!-- Objective -->

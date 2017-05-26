@@ -5,7 +5,7 @@
     Turquois/Green Light-------#45E6BB
     Turquios/Green Lightest....#D0F7ED
     Dark Blue/Gray.............#495867 - rgba(73, 88, 103, 1)
-
+    Darker BLue/Gray...........#3C4955
 
     #06D6A0 rgba(6, 214, 160, 1)
 */
@@ -66,8 +66,8 @@ body.js-loading #cover-image{
   position:relative;
   background-color:#EFF9F0;
   z-index:1;
-/*  box-shadow: 0px -10px 18px rgba(73, 88, 103, .3);
-*/  transition: transform .8s ease-in-out;
+  box-shadow: 0px -10px 18px rgba(73, 88, 103, .3);
+  transition: transform .8s ease-in-out;
 }
 .container{
   position:relative;
@@ -89,17 +89,18 @@ nav#fixed-nav{
   transition:opacity .6s .8s;
 }
 nav#fixed-nav a{
-  color:#fff;
+  color:#3C4955;
 }
 .nav-kp{
   position:absolute;
   left:.3rem;
   font-family:logoFont;
   font-size: 1.8rem;
+  font-weight:700;
   padding:1rem;
   line-height:2rem;
   letter-spacing:-1px;
-  text-shadow:0px 0px 8px rgba(73, 88, 103, .5);
+  /*text-shadow:0px 0px 8px rgba(73, 88, 103, .5);*/
   z-index:3;
 }
 
@@ -125,8 +126,8 @@ nav#fixed-nav a{
     top:.5rem;
     line-height:3rem;
     padding:.95rem;
-    color:#fff;
-    text-shadow:0px 0px 8px rgba(73, 88, 103, .5);
+    color:#3C4955;
+    /*text-shadow:0px 0px 8px rgba(73, 88, 103, .5);*/
   }
   #menu-window{
     position: absolute;
@@ -170,7 +171,7 @@ nav#fixed-nav a{
     line-height:6.4rem;
     transform:translateY(-8rem);
     opacity:0;
-    color:#fff;
+    color:#3C4955;
     transition: opacity .2s 0s, transform .6s;
   }
 
@@ -250,9 +251,9 @@ nav#fixed-nav a{
   object-position: 50% 40%;
   font-family: 'object-fit: cover; object-position: 50% 40%;';
   filter: hue-rotate(65deg) grayscale(.2) contrast(1);
-  opacity:1;
+  opacity:.9;
   transform:translateY(0) scale(1);
-  transition: transform .8s .6s ease-out, opacity 1s .6s;
+  transition: transform .8s .4s ease-out, opacity 1s .4s;
 }
 /* 
    Kyle Peterson
@@ -260,20 +261,20 @@ nav#fixed-nav a{
 */
 #lp-header{
   position: absolute;
-  top: 25%;
-  left: 50%;
-  margin-left: -15.38rem;
-  margin-top: -5.4rem;
+  width:100%;
+  top: 23.5%;
+  margin-top: -3.3rem;
+  text-align:center;
   z-index: 2;
-  color:#fff;
-  text-shadow:0px 0px 20px rgba(73, 88, 103, .8);
+  /*text-shadow:0px 0px 20px rgba(73, 88, 103, .8);*/
   transform:translateY(0);
-  transition: transform .8s .8s;
+  transition: transform .8s;
 }
 #lp-header h1{
   font-family:logoFont;
   font-weight:500;
-  font-size:7rem;
+  font-size:6rem;
+  color:#3C4955;
   margin:0;
 }
 #pic-of-me-border{

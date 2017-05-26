@@ -1,15 +1,15 @@
 
 
+;(function() {
+// var didScroll;
+// window.onscroll = scrollListener;
 
-var didScroll;
-window.onscroll = scrollListener;
-
-function scrollListener(){
-	didScroll = true;
-}
-setInterval(function() {
-    if(didScroll) {
-        didScroll = false;
+// function scrollListener(){
+// 	didScroll = true;
+// }
+// setInterval(function() {
+//     if(didScroll) {
+//         didScroll = false;
         // closeHeroNav();
         // var viewportTop = $(window).scrollTop();
         // var viewportHeight = $(window).height();
@@ -27,64 +27,77 @@ setInterval(function() {
         // }
 
 
-    }
-}, 100);
+//     }
+// }, 100);
 
 
-// function closeHeroNav(){
-// 	if ($('#toggle').is(':checked')) {
-// 		$('#toggle').prop('checked', false);
-// 	}
-// }
 
 
-/* 
-   Parallaxing JS 
-   sourced from: 
-   http://morris-digital.co.uk/blog/super-simple-60-fps-parallax/
-*/
+ window.removeEventListener( 'scroll', noscroll );
 
-      $(document).ready(function(){
+         function noscroll() {
+           window.scrollTo( 0, 0 );
+         }
 
-          function draw() {
+
+
+
+
+	var init;
+
+
+	init = function(){
+		console.log("init");
+		draw();
+	}
+
+	/* 
+
+	   Parallaxing JS 
+	   sourced from: 
+	   http://morris-digital.co.uk/blog/super-simple-60-fps-parallax/
+	
+	*/
+        
+        function draw() {
               requestAnimationFrame(draw);
               // Drawing code goes here
               scrollEvent();
-          }
-          draw();
+    	}
 
-      });
 
-      function scrollEvent(){
-      	console.log("called")
-      	var viewportTop, windowHeight, viewportBottom, distance, sym;
-          // if(!is_touch_device()){
-              viewportTop = $(window).scrollTop();
-              windowHeight = $(window).height();
-              viewportBottom = windowHeight+viewportTop;
-
-              if($(window).width())
-
-              $('[data-parallax="true"]').each(function(){
-              	  
-
-                  distance = viewportTop * $(this).attr('data-speed');
-                  var elOffset = 200;
-                  var opacity = 1-viewportTop/(windowHeight*.5-elOffset);
-                  if(opacity < 0) opacity = 0;
-                  console.log(opacity);
-                  if($(this).attr('data-direction') === 'up'){ sym = '-'; } else { sym = ''; };
-                
-                  $(this).css('transform','translate3d(0, ' + sym + distance +'px,'+  (distance*100) +'px)');
-                  $('#pic-of-me-border').css('opacity', opacity);
-              });
-
-          // }
-      }   
+        function scrollEvent(){
+        	var viewportTop, windowHeight, viewportBottom, distance, sym;
+            // if(!is_touch_device()){
+                viewportTop = $(window).scrollTop();
+                windowHeight = $(window).height();
+                viewportBottom = windowHeight+viewportTop;
+  
+                if($(window).width())
+  
+                $('[data-parallax="true"]').each(function(){
+                	  
+  
+                    distance = viewportTop * $(this).attr('data-speed');
+                    var elOffset = 300;
+                    var opacity = 1-viewportTop/(windowHeight*.5-elOffset);
+                    if(opacity < 0) opacity = 0;
+                    if($(this).attr('data-direction') === 'up'){ sym = '-'; } else { sym = ''; };
+                  
+                    $(this).css('transform','translate3d(0, ' + sym + distance +'px,'+  (distance*100) +'px)');
+                    $('#lp-header').css('opacity', opacity);
+                });
+  
+            // }
+        }   
 
       function is_touch_device() {
         return 'ontouchstart' in window // works on most browsers 
             || 'onmsgesturechange' in window; // works on ie10
       }
 
+      init();
 
+
+
+})();
